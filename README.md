@@ -4,7 +4,7 @@ Git-Page:
 TBU
 
 Git Repository:
-TBU
+https://github.com/MatiWolFo/reacdexver2
 
 ## Contexto
 - Aprendizaje a nivel básico de React realizando ver. 1.0.0 de ReactDexVer2
@@ -30,6 +30,7 @@ TBU
 - Consumo PokeAPI con fetch
 
 ## Siguientes pasos
+- Deploy build en GHub Pages
 - Integrar filtrado correctamente
 - Integrar React Suite
 - Responsibidad barra de estadísticas
