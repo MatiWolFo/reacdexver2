@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import { AppRouter } from './AppRouter';
+//USAR EL PROVIDER DEL CONTEXTO EN LA PARTE MAS ALTA DE LA APP
+import { PokemonProvider } from './components/context/PokemonProvider';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+    <PokemonProvider>
+      <AppRouter />
+    </PokemonProvider>
+  )
+};
 export default App;

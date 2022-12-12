@@ -1,3 +1,40 @@
+## Link Proyecto
+
+Git-Page:
+TBU
+
+Git Repository:
+TBU
+
+## Contexto
+- Aprendizaje a nivel básico de React realizando ver. 1.0.0 de ReactDexVer2
+
+## Tech usados
+- HTML to JSX tool
+- CSS
+- JavaScript
+- REACT
+- PokeAPI
+- Loader
+- fetch API
+- React Router Dom
+
+## Avances
+#### 12-12-2022
+- Cargado proyecto a Repositorio
+- Deploy github pages
+#### 11-12-2022
+- Agregados y modificados estilos 
+#### 09-12-2022
+- Árbol de componentes
+- Consumo PokeAPI con fetch
+
+## Siguientes pasos
+- Integrar filtrado correctamente
+- Integrar React Suite
+- Responsibidad barra de estadísticas
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
