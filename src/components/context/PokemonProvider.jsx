@@ -1,7 +1,7 @@
 //PROVIDER PARA TRABAJAR DE LA MANO CON USECONTEXT PROPIO
 //EL PROVIDER DEBE SER USADO IDEALMENTE EN LA APP.JSX/JS O EL MAIN.JSX
-import { useEffect, useState } from "react";
-import { useForm } from "../../hook/useForm";
+import {useEffect, useState} from "react";
+import {useForm} from "../../hook/useForm";
 import PokemonContext from "./PokemonContext";
 
 export const PokemonProvider = ({ children }) => {
@@ -53,8 +53,7 @@ export const PokemonProvider = ({ children }) => {
         //ITERAR LOS RESULTS DE LA API USANDO MAP
         const promises = data.results.map(async (pokemon) => {
             const res = await fetch(pokemon.url)
-            const data = await res.json()
-            return data
+            return await res.json()
         })
         //USAR PROMISE PARA QUE LA API ENTREGUE LOS DATOS Y NO PROMESAS DESDE LOS RESULTS
         const results = await Promise.all(promises)
@@ -70,13 +69,12 @@ export const PokemonProvider = ({ children }) => {
     //GENERANDO FUNCION PARA LLAMAR LA API USANDO FETCH Y BUSCAR EN TODO EL DIRECTORIO PARA SEARCHPAGE
     const getGlobalPokemons = async () => {
         const baseURL = 'https://pokeapi.co/api/v2/'
-        const res = await fetch(`${baseURL}pokemon?limit=100000&offset=0`)
+        const res = await fetch(`${baseURL}pokemon?limit=100&offset=0`)
         const data = await res.json();
         //ITERAR LOS RESULTS DE LA API USANDO MAP
         const promises = data.results.map(async (pokemon) => {
             const res = await fetch(pokemon.url)
-            const data = await res.json()
-            return data
+            return await res.json()
         })
         //USAR PROMISE PARA QUE LA API ENTREGUE LOS DATOS Y NO PROMESAS DESDE LOS RESULTS
         const results = await Promise.all(promises)
@@ -88,8 +86,7 @@ export const PokemonProvider = ({ children }) => {
     const getPokemonByID = async (id) => {
         const baseURL = 'https://pokeapi.co/api/v2/'
         const res = await fetch(`${baseURL}pokemon/${id}`)
-        const data = await res.json()
-        return data
+        return await res.json()
     };
 
     //USEEFFECT PARA EJECUTAR FUNCION ASYNC DE FETCH ALL
@@ -99,7 +96,7 @@ export const PokemonProvider = ({ children }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [offset]);
 
-    //USEEFECT PARA EJECUTAR FUNCION ASYNC DE FETCH GLOBAL, 
+    //USEEFECT PARA EJECUTAR FUNCION ASYNC DE FETCH GLOBAL,
     useEffect(() => {
         getGlobalPokemons()
     }, []);

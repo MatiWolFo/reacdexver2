@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React, {useContext} from 'react'
 import PokemonContext from '../components/context/PokemonContext';
-//import { FilterBar } from '../components/FilterBar';
-import { PokemonList } from '../components/PokemonList';
+import { FilterBar } from '../components/FilterBar';
+import {PokemonList} from '../components/PokemonList';
 
 
 export const HomePage = () => {
@@ -9,10 +9,8 @@ export const HomePage = () => {
     const {onClickLoadMore, active, setActive} = useContext(PokemonContext)
 
     return (
-        //CORREGIR FILTRADO DE TIPOS
         <>
-            {/* <div className='container-filter container'>
-                {/* !active, SI ESTA EN TRUE PONLO EN FALSE, SI ESTA EN FALSE PONLO EN TRUE
+             <div className='container-filter container'>
                 <div className='icon-filter' onClick={()=> setActive(!active)}>
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
@@ -30,11 +28,10 @@ export const HomePage = () => {
                     </svg>
                     <span>Filtrar</span>
                 </div>
-            </div>*/}
+            </div>
             <PokemonList />
-            {/* <FilterBar />*/}
+             <FilterBar />
             <div className ="container-btn-load-more container">
-                {/* CARGA EL SIGUIENTE ARRAY DE POKEMON CON EL ONCLICK DEL PROVIDER */}
                 <button className ='btn-load-more' onClick ={onClickLoadMore}>
                     CARGAR MÁS
                 </button>
