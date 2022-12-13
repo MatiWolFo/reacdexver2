@@ -4,10 +4,14 @@ Git-Page:
 TBU
 
 Git Repository:
-TBU
+https://github.com/MatiWolFo/reacdexver2
 
 ## Contexto
 - Aprendizaje a nivel básico de React realizando ver. 1.0.0 de ReactDexVer2
+- Consumir API Pokémon usando Fetch
+- Implementar pages para tener 2 vistas principales y usar Router para navegar
+    - 1 vista de listado
+    - 1 vista detalles e info del pokémon 
 
 ## Tech usados
 - HTML to JSX tool
@@ -30,6 +34,7 @@ TBU
 - Consumo PokeAPI con fetch
 
 ## Siguientes pasos
+- Deploy build en GHub Pages
 - Integrar filtrado correctamente
 - Integrar React Suite
 - Responsibidad barra de estadísticas
