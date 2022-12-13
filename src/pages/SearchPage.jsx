@@ -19,7 +19,7 @@ export const SearchPage = () => {
         <>
             <div className='container'>
                 <p className='p-search'>
-                    {/* CANTIDAD DE ELEMENTOS DEL ARRAY DEVUELTO POR LA CONSULTA CON LENGTH */}
+                    {/* CANTIDAD DE ELEMENTOS DEL ARRAY DEVUELTO POR LA CONSULTA CON LENGHT */}
                     Se encontraron <span>{filteredPokemons.length}</span> resultados:
                 </p>
                 {/* MAPEAR LOS RESULTADOS PARA OBTENER LA CARD */}
