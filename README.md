@@ -11,9 +11,10 @@ https://github.com/MatiWolFo/reacdexver2
 ## Contexto
 - Aprendizaje a nivel básico de React realizando ver. 1.0.0 de ReactDexVer2
 - Consumir API Pokémon usando Fetch
-- Implementar pages para tener 2 vistas principales y usar Router para navegar
+- Implementar pages para tener 3 vistas principales y usar Router para navegar
     - 1 vista de listado
     - 1 vista detalles e info del pokémon 
+    - 1 vista de búsqueda de pokémon
 
 ## Tech usados
 - HTML to JSX tool
@@ -26,6 +27,11 @@ https://github.com/MatiWolFo/reacdexver2
 - React Router Dom
 
 ## Avances
+#### 27-12-2022
+- Corregido filtro
+- CSS mejorado y animaciones
+- Componentes agregados
+- Corregida vista de búsqueda
 #### 12-12-2022
 - Corregido componente y funciones de filtrado 
 #### 12-12-2022
@@ -39,10 +45,9 @@ https://github.com/MatiWolFo/reacdexver2
 
 ## Siguientes pasos
 - Deploy build en GHub Pages
-- Integrar filtrado correctamente
 - Integrar React Suite
 - Responsibidad barra de estadísticas
-
+---
 
 # Getting Started with Create React App
 
