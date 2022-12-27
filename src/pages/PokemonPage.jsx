@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import PokemonContext from '../components/context/PokemonContext';
 import { Loader } from '../components/Loader';
-import { primerMayuscula } from '../helper/helper';
+import { primerMayuscula, palabraMayuscula } from '../helper/helper';
 import { HomeButton } from '../components/HomeButton';
 
 
@@ -52,7 +52,7 @@ export const PokemonPage = () => {
                                 </div>
 
                                 <div className='container-info-pokemon'>
-                                    <h1>{primerMayuscula(pokemon.name)}</h1>
+                                    <h1>{palabraMayuscula(pokemon.name)}</h1>
                                     <div className='card-types info-pokemon-type'>
                                         {pokemon.types.map(type => (
                                             <span key={type.type.name} className={`${type.type.name}`}>
@@ -62,11 +62,11 @@ export const PokemonPage = () => {
                                     </div>
                                     <div className='info-pokemon'>
                                         <div className='group-info'>
-                                            <p>ALTURA</p>
+                                            <p>HEIGHT</p>
                                             <span>{pokemon.height / 10} m</span>
                                         </div>
                                         <div className='group-info'>
-                                            <p>PESO</p>
+                                            <p>WEIGHT</p>
                                             <span>{pokemon.weight / 10} Kg</span>
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@ export const PokemonPage = () => {
                             </div>
 
                             <div className='container-stats'>
-                                <h1>STATS BASE</h1>
+                                <h1>BASE STATS</h1>
                                 <div className='stats'>
                                     <div className='stat-group'>
                                         <span>HP</span>

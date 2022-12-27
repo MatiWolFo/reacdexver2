@@ -20,7 +20,7 @@ export const HomePage = () => {
             <div className ="container-btn-load-more container">
                 {/* CARGA EL SIGUIENTE ARRAY DE POKEMON CON EL ONCLICK DEL PROVIDER */}
                 <button className ='btn-load-more' onClick ={onClickLoadMore}>
-                    CARGAR MÁS
+                    LOAD MORE
                 </button>
             </div>
             <HomeButton />            

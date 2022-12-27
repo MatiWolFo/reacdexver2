@@ -12,25 +12,28 @@ export const Navigation = () => {
 
     //EVITAR REFRESH PAGINA
     const onSearchSubmit = (e) => {
-        e.preventDefault()
-        navigate('/search', {
-            state: valueSearch
-        });
-        onResetForm()
+        //IF PARA BOTON BUSCAR, EVITAR AUTO RENDER Y LIMPIAR, EVITAR BUSCAR VACIO SIN VALUESEARCH
+        if (valueSearch) {
+            e.preventDefault()
+            navigate('/search', {
+                state: valueSearch               
+            });
+            onResetForm()
+        } else {
+            e.preventDefault()
+            onResetForm()
+        }      
     };
-
     return (
         <>
             <div>
-                <header className='container'>
+                <header className='header-container'>
                     <Link to='/' className='logo'>
                         <img
                             src='https://i.pinimg.com/originals/bd/cd/20/bdcd20f5411ee5785889542d303ad4cb.png'
                             alt='Logo Pokedex'
                         />
                     </Link>
-
-
                     <form onSubmit={onSearchSubmit}>
                         <div className='form-group'>
                             <svg
@@ -53,30 +56,30 @@ export const Navigation = () => {
                                 id=''
                                 value={valueSearch}
                                 onChange={onInputChange}
-                                placeholder='Buscar nombre de pokemon'
+                                placeholder="Search by Pokémon name"
                             />
                         </div>
                         <div className='container-filter container'>
-                        {/* !active, SI ESTA EN TRUE PONLO EN FALSE, SI ESTA EN FALSE PONLO EN TRUE */}
-                        <div className='icon-filter' onClick={() => setActive(!active)}>
-                            <svg
-                                xmlns='http://www.w3.org/2000/svg'
-                                fill='none'
-                                viewBox='0 0 24 24'
-                                strokeWidth='1.5'
-                                stroke='currentColor'
-                                className='icon'
-                            >
-                                <path
-                                    strokeLinecap='round'
-                                    strokeLinejoin='round'
-                                    d='M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75'
-                                />
-                            </svg>
-                            <span>Filtrar</span>
+                            {/* !active, SI ESTA EN TRUE PONLO EN FALSE, SI ESTA EN FALSE PONLO EN TRUE */}
+                            <div className='icon-filter' onClick={() => setActive(!active)}>
+                                <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    fill='none'
+                                    viewBox='0 0 24 24'
+                                    strokeWidth='1.5'
+                                    stroke='currentColor'
+                                    className='icon'
+                                >
+                                    <path
+                                        strokeLinecap='round'
+                                        strokeLinejoin='round'
+                                        d='M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75'
+                                    />
+                                </svg>
+                                <span>Filter</span>
+                            </div>
                         </div>
-                    </div>
-                        <button className='btn-search'>Buscar</button>
+                        <button className='btn-search'>Search</button>
                     </form>
                 </header>
                 <Outlet />

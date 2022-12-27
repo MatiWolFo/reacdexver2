@@ -25,7 +25,7 @@ export const SearchPage = () => {
             <div className='container'>
                 <p className='p-search'>
                     {/* CANTIDAD DE ELEMENTOS DEL ARRAY DEVUELTO POR LA CONSULTA CON LENGHT */}
-                    Se encontraron <span>{filteredPokemons.length}</span> resultados:
+                    <span>{filteredPokemons.length}</span> results found:
                 </p>
                 {/* MAPEAR LOS RESULTADOS PARA OBTENER LA CARD */}
                 <div className='card-list-pokemon container'>
