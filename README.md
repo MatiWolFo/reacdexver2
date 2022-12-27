@@ -27,6 +27,9 @@ https://github.com/MatiWolFo/reacdexver2
 - React Router Dom
 
 ## Avances
+#### 28-12-2022
+- Agregado btn Home
+- Corregido filtro
 #### 27-12-2022
 - Corregido filtro
 - CSS mejorado y animaciones
