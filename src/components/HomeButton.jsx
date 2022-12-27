@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const HomeButton = () => {
     return (
-        <a href="/" class="btn-flotante">Home</a>
+        <Link to='/'>
+            <button className='btn-flotante'>HOME</button>
+        </Link>
     )
 }

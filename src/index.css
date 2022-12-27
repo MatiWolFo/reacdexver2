@@ -57,7 +57,15 @@ header {
 
 .logo img {
 	width: 250px;
+	cursor: pointer;
+	transition: 0.5s;
 }
+
+.logo img:hover {
+	transform: scale(1.3);
+	transition: 0.5s;
+}
+
 
 header form {
 	display: flex;
@@ -98,13 +106,17 @@ header form {
 	font-size: large;
 	color: #fff;
 	background-color: var(--color-primary);
-	cursor: pointer;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
 }
 
 .btn-search:hover {
 	background-color: var(--color-primary-hover);
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
 	color: #000;
 	transition: 0.3s;
+	transform: translateY(-7px);
+	cursor: pointer;
 }
 
 /* Btn Filter */
@@ -117,27 +129,29 @@ header form {
 	font-size: large;
 	color: #fff;
 	background-color: var(--color-primary);
-	cursor: pointer;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .container-filter:hover{
 	background-color: var(--color-primary-hover);
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
 	color: #000;
 	transition: 0.3s;
+	transform: translateY(-7px);
+	cursor: pointer;
 }
-
 
 .icon-filter {
 	display: flex;
 	align-items: center;
 	gap: 15px;
 	cursor: pointer;
+	color: inherit;
 }
-
 .icon-filter .icon {
 	width: 30px;
 	height: 30px;
-	stroke: rgb(255, 255, 255);
+	color: inherit;
 }
 
 /* Card List Pokemon */
@@ -207,6 +221,7 @@ header form {
 .card-types:hover{
 	transform: scale(2);
 	transition: 0.5s;
+	cursor: default;
 }
 
 .card-types span {
@@ -334,6 +349,7 @@ header form {
 	width: 100%;
 	margin-left: 30px;
 	transition: 0.2s;
+	cursor: pointer;
 }
 
 .group-type label {
@@ -387,6 +403,7 @@ Styles of Pokemon Single Page
 .container-img-pokemon img:hover{
 	transform: scale(1.5);
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 .container-info-pokemon {
@@ -506,7 +523,7 @@ Styles of Pokemon Single Page
 	color: #ffffff;
 	border-radius: 30px;
 	background-color: var(--color-primary);
-	padding: 18px 30px; /* Relleno del boton */
+	padding: 18px 30px;
 	position: fixed;
 	bottom: 40px;
 	right: 40px;
@@ -514,10 +531,13 @@ Styles of Pokemon Single Page
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 	z-index: 99;
 	text-decoration: none;
+	border-style: hidden;
 }
 .btn-flotante:hover {
 	background-color: var(--color-primary-hover);
 	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
 	transform: translateY(-7px);
 	color: #000;
+	border-style: hidden;
+	cursor: pointer;
 }

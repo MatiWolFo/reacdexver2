@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import PokemonContext from './context/PokemonContext';
 
 //COMPONENTE DE RENDERIZADO
@@ -28,12 +28,12 @@ export const Navigation = () => {
         <>
             <div>
                 <header className='header-container'>
-                    <Link to='/' className='logo'>
+                    <a href='/' className='logo'>
                         <img
                             src='https://i.pinimg.com/originals/bd/cd/20/bdcd20f5411ee5785889542d303ad4cb.png'
                             alt='Logo Pokedex'
                         />
-                    </Link>
+                    </a>
                     <form onSubmit={onSearchSubmit}>
                         <div className='form-group'>
                             <svg

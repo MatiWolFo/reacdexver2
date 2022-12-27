@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import PokemonContext from '../components/context/PokemonContext';
 import { FilterBar } from '../components/FilterBar';
-import { HomeButton } from '../components/HomeButton';
 import { PokemonList } from '../components/PokemonList';
 
 
@@ -22,8 +21,7 @@ export const HomePage = () => {
                 <button className ='btn-load-more' onClick ={onClickLoadMore}>
                     LOAD MORE
                 </button>
-            </div>
-            <HomeButton />            
+            </div>         
         </>
     );
 };
