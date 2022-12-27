@@ -12,7 +12,6 @@ export const FilterBar = () => {
             <div className={`container-filters ${active ? 'active': ''}`}>
                 <div className="filter-by-type">
                     <span>Tipo</span>
-
                     <div className='group-type'>
                         <input
                             type='checkbox'

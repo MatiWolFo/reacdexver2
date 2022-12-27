@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import PokemonContext from '../components/context/PokemonContext';
 import { Loader } from '../components/Loader';
 import { primerMayuscula } from '../helper/helper';
+import { HomeButton } from '../components/HomeButton';
 
 
 export const PokemonPage = () => {
@@ -28,6 +29,10 @@ export const PokemonPage = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    useEffect(() => {
+        document.title = "Pokedex React - Pokemon Info"
+    }, []);
+
     return (
         <>
             <main className='container main-pokemon'>
@@ -41,7 +46,7 @@ export const PokemonPage = () => {
                                 <span className='number-pokemon'>#{pokemon.id}</span>
                                 <div className='container-img-pokemon'>
                                     <img
-                                        src={pokemon.sprites.other.dream_world.front_default}
+                                        src={pokemon.sprites.other.home.front_default}
                                         alt={`Pokemon ${pokemon?.name}`}
                                     />
                                 </div>
@@ -51,7 +56,7 @@ export const PokemonPage = () => {
                                     <div className='card-types info-pokemon-type'>
                                         {pokemon.types.map(type => (
                                             <span key={type.type.name} className={`${type.type.name}`}>
-                                                {type.type.name}
+                                                {primerMayuscula(type.type.name)}
                                             </span>
                                         ))}
                                     </div>
@@ -119,6 +124,7 @@ export const PokemonPage = () => {
                     )
                 }
             </main>
+            <HomeButton />  
         </>
     );
 };

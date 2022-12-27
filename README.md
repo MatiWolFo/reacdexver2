@@ -1,3 +1,5 @@
+# CONTROL DE CAMBIOS
+---
 ## Link Proyecto
 
 Git-Page:
@@ -24,6 +26,8 @@ https://github.com/MatiWolFo/reacdexver2
 - React Router Dom
 
 ## Avances
+#### 12-12-2022
+- Corregido componente y funciones de filtrado 
 #### 12-12-2022
 - Cargado proyecto a Repositorio
 - Deploy github pages

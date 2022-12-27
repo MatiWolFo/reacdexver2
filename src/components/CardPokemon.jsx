@@ -9,7 +9,7 @@ export const CardPokemon = ({ pokemon }) => {
             <div className='card-img'>
                 <img
                     //TRAE LAS IMAGENES Y EL NOMBRE
-                    src={pokemon.sprites.other.dream_world.front_default}
+                    src={pokemon.sprites.other.home.front_default}
                     alt={`Pokemon ${pokemon.name}`}
                 />
             </div>
@@ -21,7 +21,7 @@ export const CardPokemon = ({ pokemon }) => {
                     {pokemon.types.map(type => (
                         //CLASSNAME DE LOS TIPOS PARA APLICAR CSS SEGUN EL DATO
                         <span key={type.type.name} className={type.type.name}>
-                            {type.type.name}
+                            {primerMayuscula(type.type.name)}
                         </span>
                     ))}
                 </div>

@@ -1,19 +1,19 @@
 import React, { useContext } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom';
-import  PokemonContext  from './context/PokemonContext';
+import PokemonContext from './context/PokemonContext';
 
 //COMPONENTE DE RENDERIZADO
 export const Navigation = () => {
     //USECONTEXT PARA UTILIZAR LOS VALORES DEL POKEMON PROVIDER Y USARLOS EN ESTE COMPONENTE
-    const {onInputChange, valueSearch, onResetForm } = useContext(PokemonContext)
-    
+    const { onInputChange, valueSearch, onResetForm, setActive, active } = useContext(PokemonContext)
+
     //REDIRECCIONAR A LA PAGINA O RUTA DE SEARCH POKEMON EN BASE AL VALUESEARCH (LO QUE TENGA EN LA BARRA DE BUSQUEDA)
     const navigate = useNavigate()
-    
+
     //EVITAR REFRESH PAGINA
     const onSearchSubmit = (e) => {
         e.preventDefault()
-        navigate('/search',{
+        navigate('/search', {
             state: valueSearch
         });
         onResetForm()
@@ -25,10 +25,12 @@ export const Navigation = () => {
                 <header className='container'>
                     <Link to='/' className='logo'>
                         <img
-                            src='https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png'
+                            src='https://i.pinimg.com/originals/bd/cd/20/bdcd20f5411ee5785889542d303ad4cb.png'
                             alt='Logo Pokedex'
                         />
                     </Link>
+
+
                     <form onSubmit={onSearchSubmit}>
                         <div className='form-group'>
                             <svg
@@ -54,6 +56,26 @@ export const Navigation = () => {
                                 placeholder='Buscar nombre de pokemon'
                             />
                         </div>
+                        <div className='container-filter container'>
+                        {/* !active, SI ESTA EN TRUE PONLO EN FALSE, SI ESTA EN FALSE PONLO EN TRUE */}
+                        <div className='icon-filter' onClick={() => setActive(!active)}>
+                            <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                                strokeWidth='1.5'
+                                stroke='currentColor'
+                                className='icon'
+                            >
+                                <path
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    d='M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75'
+                                />
+                            </svg>
+                            <span>Filtrar</span>
+                        </div>
+                    </div>
                         <button className='btn-search'>Buscar</button>
                     </form>
                 </header>

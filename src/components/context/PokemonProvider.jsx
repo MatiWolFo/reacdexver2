@@ -20,7 +20,7 @@ export const PokemonProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [active, setActive] = useState(false);
     //USESTATE PARA FUNCION DE FILTRO DE POKEMON + USESTATE DE FILTROS
-    const [filteredPokemons, setfilteredPokemons] = useState([]);
+    const [filteredPokemons, setFilteredPokemons] = useState([]);
     const [typeSelected, setTypeSelected] = useState({
         grass: false,
         normal: false,
@@ -40,13 +40,11 @@ export const PokemonProvider = ({ children }) => {
         dragon: false,
         dark: false,
         fairy: false,
-        unknow: false,
-        shadow: false,
     });
 
 
     //GENERANDO FUNCION PARA LLAMAR LA API USANDO FETCH PARA HOMEPAGE Y MOSTRAR LOS POKEMON SEGUN EL OFFLIMIT
-    const getAllPokemons = async (limit = 50) => {
+    const getAllPokemons = async (limit = 12) => {
         const baseURL = 'https://pokeapi.co/api/v2/'
         const res = await fetch(`${baseURL}pokemon?limit=${limit}&offset=${offset}`)
         const data = await res.json();
@@ -105,26 +103,26 @@ export const PokemonProvider = ({ children }) => {
     }, []);
 
     const onClickLoadMore = () => {
-        setOffset(offset + 50)
+        setOffset(offset + 12)
     };
 
     //FUNCIONES DE FILTRADO
     const handleCheckbox = e => {
         //CHECAR SI UN BOX ESTA SELECCIONADO EN BASE A UN ESTADO SELECTED DE UN LISTADO BOOLEANO CON FALSE DEFAULT
         setTypeSelected({
-			...typeSelected,
+            ...typeSelected,
             //TIPO: TRUE O FALSE
-			[e.target.name]: e.target.checked,
-		});
+            [e.target.name]: e.target.checked
+        });
         //COMPROBAR SI HAY BOXES CHECKEADOS O SELECCIONADOS
         if (e.target.checked) {
-			const filteredResults = globalPokemons.filter(pokemon =>
-				pokemon.types
-					.map(type => type.type.name)
-					.includes(e.target.name)
-			);
+            const filteredResults = globalPokemons.filter(pokemon =>
+                pokemon.types
+                    .map(type => type.type.name)
+                    .includes(e.target.name)
+            );
             console.log(filteredResults)
-            setfilteredPokemons([
+            setFilteredPokemons([
                 //ESPARCIR ARRAY INICIAL Y LOS RESULTADOS FILTRADOS, PARA QUE TOME TODOS LOS CHECKBOX SELECCIONADOS
                 ...filteredPokemons,
                 ...filteredResults
@@ -134,11 +132,11 @@ export const PokemonProvider = ({ children }) => {
             const filteredResults = filteredPokemons.filter(
                 pokemon =>
                     // !pokemon.types DEVUELVE LOS QUE NO SON DEL TIPO SELECCIONADO
-					pokemon.types
-						.map(type => type.type.name)
-						.includes(e.target.name)
-			);
-			setfilteredPokemons([...filteredResults]);
+                    !pokemon.types
+                        .map(type => type.type.name)
+                        .includes(e.target.name)
+            );
+            setFilteredPokemons([...filteredResults]);
         }
     };
 

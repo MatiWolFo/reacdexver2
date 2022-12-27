@@ -1,10 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import { CardPokemon } from '../components/CardPokemon';
 import PokemonContext from '../components/context/PokemonContext';
+import { HomeButton } from '../components/HomeButton';
 
 
 export const SearchPage = () => {
+
+    useEffect(() => {
+        document.title = "Pokedex React - Search"
+    }, []);
 
     const location = useLocation()
     //console.log(location)
@@ -29,6 +34,7 @@ export const SearchPage = () => {
                     ))}
                 </div>
             </div>
+            <HomeButton />    
         </>
     )
 };
