@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reactdexver2/static/css/main.86d96c41.css",
+    "main.js": "/reactdexver2/static/js/main.9c5e8e61.js",
+    "index.html": "/reactdexver2/index.html",
+    "main.86d96c41.css.map": "/reactdexver2/static/css/main.86d96c41.css.map",
+    "main.9c5e8e61.js.map": "/reactdexver2/static/js/main.9c5e8e61.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86d96c41.css",
+    "static/js/main.9c5e8e61.js"
+  ]
+}
